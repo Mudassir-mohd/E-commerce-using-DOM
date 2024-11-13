@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Center the form on the page */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        /* Styling the form container */
+        .form-container {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Styling input fields */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Styling the button */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="form-container">
+        <h2>Register</h2>
+        <input type="text" name="useremail" placeholder="Email" id="">
+        <input type="text" name="username" placeholder="Username" id="">
+        <input type="password" name="password" placeholder="Password" id="">
+        <button onclick=hanlderegister()>Register</button>
+    </div>
+
+    <script>
+        userdata = {};
+        let hanlderegister = () => {
+            let email = document.getElementsByName("useremail")[0].value;
+            let name = document.getElementsByName("username")[0].value;
+            let password = document.getElementsByName("password")[0].value;
+            
+            userdata.email = email;
+            userdata.name = name;
+            userdata.password = password;
+            console.log(userdata);
+            
+            localStorage.setItem("details", JSON.stringify(userdata));
+            if(onclick=hanlderegister){
+                alert("Enter your login details")
+                location.assign("./login.html")
+            }
+        };
+
+    </script>
+
+</body>
+</html>
